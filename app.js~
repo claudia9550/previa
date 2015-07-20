@@ -16,24 +16,24 @@ var app     = express();
 
 //	vista engine setup - 
 // instala generador de vistas ejs
-app.set('views', path.join(__dirname + 'views'));
+app.set('views', path.join(__dirname + '/views'));
 app.set('view engine', 'ejs');
 
 // Favicon - Icono Amigable
-app.use(favicon(_dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
-app.use(express.static(path.join(_dirname,'public')));
+app.use(express.static(path.join(__dirname,'public')));
 
 // asocia rutas a gestores o enrutadores
 app.use('/',routes);
 app.use(partials());
 
-app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-});
+//app.configure('development', function(){
+//  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+//});
 
 //app.configure('production', function(){
  // app.use(express.errorHandler());
