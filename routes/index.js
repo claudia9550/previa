@@ -9,6 +9,7 @@ router.get('/', function(req,res)
 });
 router.get('/examen/question', examencontroller.question);
 router.get('/examen/answer', examencontroller.answer);
+router.get('/examen/creditos', examencontroller.creditos);
 
 module.exports = router;
 
